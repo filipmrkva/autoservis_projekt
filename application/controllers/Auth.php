@@ -131,7 +131,7 @@ class Auth extends CI_Controller
 		$this->ion_auth->logout();
 
 		// redirect them to the login page
-		redirect('auth/login', 'refresh');
+		redirect('pages/home', 'refresh');
 	}
 
 	/**
@@ -895,5 +895,48 @@ class Auth extends CI_Controller
 			return $view_html;
 		}
 	}
+        
+        // jednotlivé přidané strany na webu po přihlášení
+        
+        public function formular()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerform', $data);                
+		$this->load->view('pages/formular', $data);  
+		$this->load->view('templates/footer');
+            }
+        } 
+        public function zamestnanci()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerform', $data);                
+		$this->load->view('pages/zamestnanci', $data);  
+		$this->load->view('templates/footer');
+            }
+        }  
+        public function zakaznici()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerform', $data);                
+		$this->load->view('pages/zakaznici', $data);  
+		$this->load->view('templates/footer');
+            }
+        }  
+        public function opravy()
+        {
+            if($this->ion_auth->logged_in()){
+                $this->load->model('autoservis_model');
+                $data['polozky'] = $this->autoservis_model->get_menu();
+                $this->load->view('templates/headerform', $data);                
+		$this->load->view('pages/opravy', $data);  
+		$this->load->view('templates/footer');
+            }
+        }  
 
 }
