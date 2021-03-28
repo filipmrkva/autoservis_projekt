@@ -17,30 +17,45 @@ body {
 } 
         </style>
     </head>
-    <body style="background-color:white;">
+    <body style="background-color:lightyellow;">
         <div class="container">
             <div><br>&nbsp</div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-3">
                     
                 </div>
                 
-                <div class="col-4">
-                    <h2><b>Formuláře:</b></h2>
+                <div class="col-6">
+                    <div class="jumbotron" style="background-color:#666666">
+                        <div class="text-center" style="color:white">
+                            <h2><b><u>Formuláře</u></b></h2>
+                        </div>
+                    <div><br>&nbsp</div>
                     <button type="button" class="btn btn-dark btn-block">
-                    <a class="nav-link text-light" href="zamestnanci">Úprava a přidání zaměstnanců</a>
+                    <a class="nav-link text-light" href="zamestnanci">Správa zaměstnanců</a>
                     </button>
                     <button type="button" class="btn btn-dark btn-block">
-                    <a class="nav-link text-light" href="zakaznici">Úprava a přidání zákazníků</a>
+                    <a class="nav-link text-light" href="zakaznici">Správa a přidání zákazníků</a>
                     </button>
                     <button type="button" class="btn btn-dark btn-block">
-                    <a class="nav-link text-light" href="opravy">Opravy</a>
+                    <a class="nav-link text-light" href="opravy">Informace o opravách</a>
                     </button>
+                    </div>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                     
                 </div>
             </div>
         </div>
+        <div><br>&nbsp</div>
+        <div class="row">
+            <div class="col-12">
+        <div class="jumbotron bg-dark text-white">
+            <h4><u>Kontaktní informace k autoservisu</u></h4> 
+  <hr class="my-3">
+  <p>Tento projekt vypracoval Filip Mrkva @2021</p> 
+</div>
+            </div>
+            </div>
     </body>
 </html>

@@ -913,6 +913,7 @@ class Auth extends CI_Controller
             if($this->ion_auth->logged_in()){
                 $this->load->model('autoservis_model');
                 $data['polozky'] = $this->autoservis_model->get_menu();
+                $data['zamestnanec'] = $this->db->query('SELECT * FROM zaměstnanci ORDER BY idzaměstnanci')->result();
                 $this->load->view('templates/headerform', $data);                
 		$this->load->view('pages/zamestnanci', $data);  
 		$this->load->view('templates/footer');
@@ -923,6 +924,7 @@ class Auth extends CI_Controller
             if($this->ion_auth->logged_in()){
                 $this->load->model('autoservis_model');
                 $data['polozky'] = $this->autoservis_model->get_menu();
+                $data['zakaznik'] = $this->db->query('SELECT * FROM majitel ORDER BY idmajitel')->result();
                 $this->load->view('templates/headerform', $data);                
 		$this->load->view('pages/zakaznici', $data);  
 		$this->load->view('templates/footer');
