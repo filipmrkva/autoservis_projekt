@@ -42,8 +42,8 @@ body {
     <?php foreach ($zakaznik as $zak) { ?>
         <tr>
             <td><?= $zak->idmajitel; ?></td>
-            <td><?= $zak->jméno; ?></td>
-            <td><?= $zak->příjmení; ?></td>
+            <td><?= $zak->jmeno; ?></td>
+            <td><?= $zak->prijmeni; ?></td>
             <td><?= $zak->adresa; ?></td>
             <td><?= $zak->telefon; ?></td>
             <td><?= $zak->email; ?></td>
@@ -56,3 +56,38 @@ body {
                 <a class="nav-link text-light" href="formular">Zpět na formuláře</a>
             </div>
         </div>
+    </body>
+</html>
+
+<?php
+    $connect = mysqli_connect("localhost","root","","auto_servis");
+    if(isset($_POST['submitinserdetails'])) {
+        
+        $jmeno = $_POST['jmeno'];
+        $prijmeni = $_POST['prijmeni'];
+        $osobni_cislo = $_POST['osobni_cislo'];
+        
+    if(!empty($jmeno) && !empty($prijmeni) && !empty($osobni_cislo)  )   {
+    
+        
+        $sql = "INSERT INTO `zamestnanci`(`jmeno`, `prijmeni`, `osobni_cislo`)"
+                               . " VALUES ('$jmeno','$prijmeni','$osobni_cislo)" ;
+    $qry = mysqli_query($connect, $sql);
+    if($qry){
+        echo "Zaměstnanec byl úspěšně přidán do databáze";
+    }   
+        
+    } else {
+        echo "Všechny kolonky musí být vyplněné";
+    }
+     
+    }
+?>
+
+<form action="" method="POST">
+            Jméno:<br>
+<input type="text" name="jmeno"><br >Příjmení:<br >
+<input type="text" name="prijmeni"><br >Osobní číslo:<br >
+<input type="text" name="osobni_cislo"><br ><br >
+<input type="submit" name="submitinserdetails" value="Odeslat">
+</form>
