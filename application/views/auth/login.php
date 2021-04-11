@@ -16,10 +16,13 @@
         <style>
     body {
      text-align: center;
+     background-image: url(<?php echo base_url();?>images/login-pokus2.jpg);
     }
     </style>
     </head>
     <body style="background-color:lightgrey;">
+        <div><br>&nbsp</div>
+        <div><br>&nbsp</div>
         <div><br>&nbsp</div>
         <div class="row">
         <div class="col-4">

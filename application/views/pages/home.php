@@ -12,13 +12,19 @@
         <script src="less.js" type="text/javascript"></script>
         <style>
 body {
-	background-image: url("images/.jpg");
-        background-repeat:no-repeat;
-       background-size:cover;
+	background-image: url(<?php echo base_url();?>images/home-pokusx.jpg);
 } 
+.jumbotron {
+        background-image: url(<?php echo base_url();?>images/jumb-pokus.jpg);
+         border: 1px;
+         border-style: solid;
+         border-color: white;
+}
         </style>
     </head>
-    <body style="background-color:white;">
+    <body>
+        <div class="text-white">
+            <b>
         <img src="<?php echo base_url('images/horpanel1.png'); ?>" width="1440" height="200" alt="Autoservis"/>
         <div class="container">
             
@@ -28,20 +34,18 @@ body {
         </div>
             <h4><b>Sháníte dobrý tým pracovníků, který by vám pomohl s vaším vozidlem?</b></h4>
             
-            <p><h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Praesent in mauris eu tortor porttitor accumsan. Fusce wisi. Aliquam erat volutpat. Phasellus rhoncus. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Curabitur bibendum justo non orci.</h5></p>
+            <p><h5>Pokud ano, tak je tady pro Vás  náš profesionální autoservis, který Vás nenechá zbytečně vyhazovat peníze a nabídne kvalitní servis a opravy za rozumné ceny. Jsme  opravna s dlouholetou praxí, specializující se na osobní i nákladní vozidla.</h5></p>
                 <h4><b>Co náš tým nabízí?</b></h4> 
-                <p><h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Praesent in mauris eu tortor porttitor accumsan. Fusce wisi. Aliquam erat volutpat. Phasellus rhoncus. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Curabitur bibendum justo non orci.</h5></p>
+                <p><h5>Servisní, sezóní a posezóní prohlídky, výměnu autoskel, výměnu olejů, servis brzd, preventivní kontroly vozidel, opravy motorů a převodovek a karosářské práce. Po domluvě je možná oprava automobilu u zákazníka, či pomoc na cestě. V případě nepojízdného automobilu je v ceně opravy také odtah k nám na dílnu a nabídnutí náhradního vozidla.</h5></p>
     <div><br>&nbsp</div>
     <div class="row">
         <div class="col-6">
                 <h4><b><u>Opravy a servis u osobních automobilů</u></b></h4>
                 <ul>
                     <li>Mechanické práce</li>
-                    <li>Diagnostika motorů a řídících jednotek pomocí PC</li>
-                    <li>Geometrie předních náprav osobních a užitkových vozidel</li>
+                    <li>Diagnostika motorů</li>
                     <li>Příprava a zajištění STK</li>
                     <li>Opravy elektroinstalace</li>
-                    <li>Opravy startérů a alternátorů</li>
                     <li>Seřizování světlometů</li>
                     <li>Kontrolní testy stavu brzdové kapaliny</li>
                     <li>Montáže tažných zařízení</li>
@@ -53,9 +57,9 @@ body {
         <div class="col-6">
                 <h4><b><u>Opravy a servis u nákladních automobilů</u></b></h4>
                 <ul>
-                    <li>Mazání vozidel, výměny olejů, konzervace dutin a spodku vozidel</li>
-                    <li>Příprava vozidel na STK vč. zajištění provedení STK</li>
-                    <li>Opravy převodovek, rozvodovek na všechny nákladní vozy a trucky</li>
+                    <li>Výměny olejů</li>
+                    <li>Příprava vozidel na STK včetně zajištění provedení STK</li>
+                    <li>Opravy převodovek na všechny nákladní vozy</li>
                     <li>Klempířské práce</li>
                     <li>Opravy a seřízení vstřikovacích čerpadel</li>
                     <li>Přestavby vozidel</li>
@@ -76,8 +80,10 @@ body {
         </div>
     </div>
     </div>
+        </div>
+            </b>
+        </div>
     <div><br>&nbsp</div>
-</div>
     <div class="row">
             <div class="col-12">
         <div class="jumbotron bg-dark text-white">

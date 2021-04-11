@@ -11,19 +11,28 @@
         <script src="less.js" type="text/javascript"></script>
         <style>
 body { 
-    background-color: whitesmoke;
+    background-image: url(<?php echo base_url();?>images/zam-pokus2.jpg);
 } 
 input{
-    width: 40%;
+    width: 100%;
     height: 5%;
     border: 1px;
     border-radius: 05px;
     padding: 8px 15px 8px 15px;
     margin: 10px 0px 15px 0px;
-    box-shadow: 1px 1px 2px 1px grey;
+    box-shadow: 2px 2px 3px 2px grey;
 }
-.jumbotron{
+.jumbotron {
+        background-image: url(<?php echo base_url();?>images/jumb-pokus.jpg);
+         border: 1px;
+         border-style: solid;
+         border-color: white;
+}
+.card{
     background-color:#bebecb;
+    border: 2px;
+    border-style: solid;
+    border-color: white;
 }
         </style>
     </head>
@@ -34,7 +43,7 @@ input{
         </div>
             
         <div class="col-8">
-            <h2><b><u>Aktuální seznam zaměstnanců:</u></b></h2>
+            <div class="text-center text-white"><h2><b><u>Aktuální seznam zaměstnanců</u></b></h2></div>
             <table class="table table-bordered table-striped table-dark">               
     <tr>
       <th scope="col">#</th>
@@ -57,50 +66,75 @@ input{
             <div><br>&nbsp</div>
         </div>
             <div class="col-2">
-                <button type="button" class="btn btn-dark">
-                <a class="nav-link text-light" href="formular">Zpět na formuláře</a>
+                <button type="button" class="btn btn-white">
+                <a class="nav-link text-dark" href="formular">Zpět na formuláře</a>
+                </button>
             </div>  
         </div>
         <div class="container">
-        <div class="jumbotron">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+  <div class="card-body">
     <center>
-        <h1> Úprava dat o zaměstnancích v databázi </h1>
+        <h4> Úprava dat o zaměstnancích v databázi </h4>
         
         <form action="" method="POST">
             <input type="text" name="id" placeholder="Zadejte platné ID"/><br/>
-            <input type="text" name="jmeno" placeholder="Zadejte nové jméno"/><br/>
-            <input type="text" name="prijmeni" placeholder="Zadejte nové příjmení"/><br/>
-            <input type="text" name="osobni_cislo" placeholder="Zadejte nové osobní číslo"/><br/>
+            <input type="text" name="jmeno" placeholder="Zadejte nové/aktuální jméno"/><br/>
+            <input type="text" name="prijmeni" placeholder="Zadejte nové/aktuální příjmení"/><br/>
+            <input type="text" name="osobni_cislo" placeholder="Zadejte nové/aktuální osobní číslo"/><br/>
             
             <input type="submit" name="update" value="Upravit data">
         </form>
     </center>
+      <div><br>&nbsp</div>
+      <div><br>&nbsp</div>
+      <div><br>&nbsp</div>
         </div>
-            <div class="jumbotron">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+  <div class="card-body">
     <center>
-        <h1> Smazání dat z databáze zadaním platného ID </h1>
+        <h4> Smazání dat z databáze zadaním platného ID </h4>
         <form action="" method="post">
 
-            &nbsp;<input type="text" name="id" placeholder="Zadejte platné ID řádku pro jeho smazání" required><br><br>
+            &nbsp;<input type="text" name="id" placeholder="Zadejte ID řádku pro jeho smazání" required><br><br>
 
             <input type="submit" name="delete" value="Smazat data">
 
         </form>
     </center>
             </div>
-            <div class="jumbotron">
+                </div>
+                <div><br>&nbsp</div>
+                 <img src="<?php echo base_url ('images/zam.jpeg'); ?>" class="rounded" width="350" height="225" alt="Zaměstnanec">     
+            </div>
+            <div class="col-4">
+                <div class="card">
+  <div class="card-body">
     <center>
-        <h1> Přidání nového zaměstnance do databáze </h1>
+        <h4> Přidání nového zaměstnance do databáze </h4>
         <form action="" method="POST">
             <input type="text" name="jmeno" placeholder="Zadejte jméno nového zaměstnance"/><br/>
             <input type="text" name="prijmeni" placeholder="Zadejte příjmení nového zaměstnance"/><br/>
-            <input type="text" name="osobni_cislo" placeholder="Zadejte osobní číslo nového zaměstnance"/><br/>
+            <input type="text" name="osobni_cislo" placeholder="Zadejte os.č. nového zaměstnance"/><br/>
             
             <input type="submit" name="insert" value="Přidat data">
         </form>
     </center>
+       <div><br>&nbsp</div>
+       <div><br>&nbsp</div>
+       <div><br>&nbsp</div>
+       <div><br>&nbsp</div>
             </div>
-        </div> 
+                </div>
+        </div>
+            </div>
+        </div>
+             <div><br>&nbsp</div>
         <div class="row">
             <div class="col-12">
         <div class="jumbotron bg-dark text-white">
@@ -188,7 +222,7 @@ if(isset($_POST['delete']))
                                . " VALUES ('$jmeno','$prijmeni','$osobni_cislo')" ;
     $qry = mysqli_query($connect, $sql);
     if($qry){
-        echo '<script type="text/javascript"> alert("Zaměstnanec byl úspěšně přidán do databáze") </script>';
+        echo '<script type="text/javascript"> alert("Zaměstnanec byl úspěšně přidán do databáze") </script>'; 
     }   
         
     } else {

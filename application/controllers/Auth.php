@@ -924,7 +924,7 @@ class Auth extends CI_Controller
             if($this->ion_auth->logged_in()){
                 $this->load->model('autoservis_model');
                 $data['polozky'] = $this->autoservis_model->get_menu();
-                $data['zakaznik'] = $this->db->query('SELECT * FROM majitel ORDER BY idmajitel')->result();
+                $data['zakaznik'] = $this->db->query('SELECT * FROM majitel ORDER BY id')->result();
                 $this->load->view('templates/headerform', $data);                
 		$this->load->view('pages/zakaznici', $data);  
 		$this->load->view('templates/footer');
@@ -935,6 +935,9 @@ class Auth extends CI_Controller
             if($this->ion_auth->logged_in()){
                 $this->load->model('autoservis_model');
                 $data['polozky'] = $this->autoservis_model->get_menu();
+                $data['oprava'] = $this->db->query('SELECT * FROM opravy ORDER BY id')->result();
+                $data['vozidla'] = $this->db->query('SELECT * FROM vozidlo ORDER BY id')->result();
+                $data['nahradni_dil'] = $this->db->query('SELECT * FROM nahradni_dily ORDER BY id')->result();
                 $this->load->view('templates/headerform', $data);                
 		$this->load->view('pages/opravy', $data);  
 		$this->load->view('templates/footer');

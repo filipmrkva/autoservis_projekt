@@ -11,14 +11,27 @@
         <script src="less.js" type="text/javascript"></script>
         <style>
 body {
-	background-image: url("images/.jpg");
+        background-image: url(<?php echo base_url();?>images/omg.jpg);
         background-repeat:no-repeat;
         background-size:cover;
 } 
+.card {
+         background-image: url(<?php echo base_url();?>images/form-back.jpg);
+         border: 4px;
+         border-style: solid;
+         border-color: white;
+}
+.jumbotron {
+        background-image: url(<?php echo base_url();?>images/jumb-pokus.jpg);
+         border: 1px;
+         border-style: solid;
+         border-color: white;
+}
         </style>
     </head>
     <body style="background-color:lightyellow;">
         <div class="container">
+            <div><br>&nbsp</div>
             <div><br>&nbsp</div>
             <div class="row">
                 <div class="col-3">
@@ -26,7 +39,8 @@ body {
                 </div>
                 
                 <div class="col-6">
-                    <div class="jumbotron" style="background-color:#666666">
+                    <div class="card">
+                    <div class="card-body">
                         <div class="text-center" style="color:white">
                             <h2><b><u>Formuláře</u></b></h2>
                         </div>
@@ -38,14 +52,16 @@ body {
                     <a class="nav-link text-light" href="zakaznici">Správa a přidání zákazníků</a>
                     </button>
                     <button type="button" class="btn btn-dark btn-block">
-                    <a class="nav-link text-light" href="opravy">Informace o opravách</a>
+                    <a class="nav-link text-light" href="opravy">Informace a správa oprav a vozidel a náhradních dílů</a>
                     </button>
                     </div>
+                </div>
                 </div>
                 <div class="col-3">
                     
                 </div>
             </div>
+            <div><br>&nbsp</div>
         </div>
         <div><br>&nbsp</div>
         <div class="row">
