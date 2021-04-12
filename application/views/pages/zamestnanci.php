@@ -11,7 +11,7 @@
         <script src="less.js" type="text/javascript"></script>
         <style>
 body { 
-    background-image: url(<?php echo base_url();?>images/zam-pokus2.jpg);
+    background-image: url(<?php echo base_url();?>images/home-pokusx.jpg);
 } 
 input{
     width: 100%;
