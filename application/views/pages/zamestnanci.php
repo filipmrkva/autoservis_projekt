@@ -9,6 +9,16 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet/less" type="text/css" href="styles.less">
         <script src="less.js" type="text/javascript"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        
+        <script>
+            $(document).ready(function(){
+                $("#div_refresh").load("zamestnanci.php");
+               setInterval(function() {
+                   $("#div_refresh").load("zamestnanci.php");
+               }, 1000);
+           }};
+        </script>
         <style>
 body { 
     background-image: url(<?php echo base_url();?>images/home-pokusx.jpg);
@@ -85,7 +95,7 @@ input{
             <input type="text" name="prijmeni" placeholder="Zadejte nové/aktuální příjmení"/><br/>
             <input type="text" name="osobni_cislo" placeholder="Zadejte nové/aktuální osobní číslo"/><br/>
             
-            <input type="submit" name="update" value="Upravit data">
+            <input type="submit" name="update" value="Upravit data" onClick="window.location.reload()">
         </form>
     </center>
       <div><br>&nbsp</div>
@@ -103,7 +113,7 @@ input{
 
             &nbsp;<input type="text" name="id" placeholder="Zadejte ID řádku pro jeho smazání" required><br><br>
 
-            <input type="submit" name="delete" value="Smazat data">
+            <input type="submit" name="delete" value="Smazat data" onClick="window.location.reload()">
 
         </form>
     </center>
@@ -122,7 +132,7 @@ input{
             <input type="text" name="prijmeni" placeholder="Zadejte příjmení nového zaměstnance"/><br/>
             <input type="text" name="osobni_cislo" placeholder="Zadejte os.č. nového zaměstnance"/><br/>
             
-            <input type="submit" name="insert" value="Přidat data">
+            <input type="submit" name="insert" value="Přidat data" onClick="window.location.reload()">
         </form>
     </center>
        <div><br>&nbsp</div>
@@ -167,8 +177,9 @@ if(isset($_POST['update']))
     }
     else
     {
-        echo '<script type="text/javascript"> alert("Data neupravena") </script>';
+        echo '<script type="text/javascript"> alert("Data se nepodařilo upravit") </script>';
     }
+    mysqli_close($connection);
 }
 ?>
 <?php
@@ -222,12 +233,12 @@ if(isset($_POST['delete']))
                                . " VALUES ('$jmeno','$prijmeni','$osobni_cislo')" ;
     $qry = mysqli_query($connect, $sql);
     if($qry){
-        echo '<script type="text/javascript"> alert("Zaměstnanec byl úspěšně přidán do databáze") </script>'; 
+        echo '<script type="text/javascript"> alert("Zákazník byl úspěšně přidán do databáze") </script>';
     }   
         
     } else {
         echo '<script type="text/javascript"> alert("Všechny kolonky musí být vyplněné") </script>';
     }
-     
+    mysqli_close($connect);
     }
 ?>
